@@ -1,0 +1,183 @@
+/* ============================================================
+   APP SHELL
+   ============================================================ */
+.app-shell {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--ws-bg-dark);
+  transition: background 350ms;
+}
+
+body.light-theme .app-shell {
+  background: var(--ws-bg-light);
+}
+
+/* ============================================================
+   HEADER
+   ============================================================ */
+.app-header {
+  height: 52px;
+  background: linear-gradient(90deg, #0d0f18 0%, #111420 50%, #0d0f18 100%);
+  border-bottom: 1px solid #1e2230;
+  display: flex;
+  align-items: center;
+  padding: 0 24px;
+  gap: 20px;
+  flex-shrink: 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+body.light-theme .app-header {
+  background: linear-gradient(90deg, #f0f4f8, #e8ecf2, #f0f4f8);
+  border-bottom-color: #d0d8e0;
+}
+
+.app-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+}
+
+.logo-chip {
+  font-size: 20px;
+  animation: pulse-chip 3s ease-in-out infinite;
+}
+
+@keyframes pulse-chip {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+.logo-title {
+  font-family: 'Orbitron', monospace;
+  font-size: 13px;
+  font-weight: 700;
+  color: #4a9fd4;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+}
+
+body.light-theme .logo-title { color: #2255aa; }
+
+.header-badges {
+  display: flex;
+  gap: 6px;
+}
+
+.badge {
+  font-family: 'Inter', sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 20px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.badge-green {
+  background: rgba(34,180,80,0.15);
+  color: #22b450;
+  border: 1px solid rgba(34,180,80,0.3);
+}
+
+.badge-blue {
+  background: rgba(74,159,212,0.15);
+  color: #4a9fd4;
+  border: 1px solid rgba(74,159,212,0.3);
+}
+
+.header-nav {
+  margin-left: auto;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-link {
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  color: #6a7080;
+  text-decoration: none;
+  transition: color 150ms;
+  letter-spacing: 0.3px;
+}
+
+.nav-link:hover { color: #4a9fd4; }
+body.light-theme .nav-link:hover { color: #2255aa; }
+
+/* ============================================================
+   WORKSPACE
+   ============================================================ */
+.workspace {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 24px;
+  gap: 16px;
+  overflow: auto;
+}
+
+.board-scale-wrapper {
+  width: fit-content;
+  transform-origin: top left;
+  transition: transform 300ms ease;
+}
+
+.workspace-inner {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+/* ============================================================
+   KEYBOARD HINT BAR
+   ============================================================ */
+.hint-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding: 8px 12px;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.05);
+  border-radius: 8px;
+  align-self: stretch;
+  max-width: 1200px;
+}
+
+body.light-theme .hint-bar {
+  background: rgba(0,0,0,0.03);
+  border-color: rgba(0,0,0,0.06);
+}
+
+.hint-item {
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  color: #506070;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+body.light-theme .hint-item { color: #7080a0; }
+
+kbd {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 10px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 3px;
+  padding: 1px 5px;
+  color: #a0b8cc;
+  box-shadow: 0 1px 0 rgba(255,255,255,0.05);
+}
+
+body.light-theme kbd {
+  background: #f0f4f8;
+  border-color: #c0c8d4;
+  color: #405060;
+  box-shadow: 0 1px 0 rgba(0,0,0,0.1);
+}
